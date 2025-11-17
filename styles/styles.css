@@ -1,0 +1,28 @@
+/* Note that for now, these values are able to be changed to suit the page better when we have more of it constructed */
+h1 {
+  color: 'white';
+  font-size: 60 px;
+  font-weight: bold;
+  /* This style is to be used for the giant "FRAMES" heading */
+}
+
+h2 {
+  color: 'white';
+  font-size: 34 px;
+  font-weight: bold;
+  /* This is for the subheadings like the "Trending Now" and "All Time Hits" headings */
+}
+
+h3 {
+  color: 'white';
+  font-size: 24 px;
+  /* Subheadings under h2 */
+}
+
+h4 {
+  
+}
+
+p {
+  
+}
