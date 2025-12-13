@@ -1068,7 +1068,7 @@ def reset_database():
         "Jake Sully protects his family among the ocean clans of Pandora. Jake Sully and Ney'tiri have formed a family and are doing everything to stay together. However, they must leave their home and explore the regions of Pandora. When an ancient threat resurfaces, Jake must fight a difficult war against the humans.",
         "James Cameron",
         "Sam Worthington, Zoe Saldaña",
-        "avatar2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNWI0Y2NkOWEtMmM2OC00MjQ3LWI1YzItZGQxYzQ3NzI4NWZmXkEyXkFqcGc@._V1_FMjpg_UX900_.jpg"
     ),
     (
         "Avatar",
@@ -1078,7 +1078,7 @@ def reset_database():
         "Jake Sully, a paraplegic former Marine, becomes part of a corporate mission on the alien world of Pandora, where he bonds with the indigenous Na'vi and must choose between following orders or protecting his new home.",
         "James Cameron",
         "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
-        "avatar.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_FMjpg_UY2902_.jpg"
     ),
     (
         "Your Name.",
@@ -1088,7 +1088,7 @@ def reset_database():
         "Two teenagers mysteriously begin swapping bodies, forming a deep connection that transcends distance and time as they try to meet in the real world.",
         "Makoto Shinkai",
         "Ryunosuke Kamiki, Mone Kamishiraishi",
-        "yourname.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_FMjpg_UY12000_.jpg"
     ),
     (
         "The Avengers",
@@ -1098,7 +1098,7 @@ def reset_database():
         "Nick Fury of S.H.I.E.L.D. assembles a team of powerful heroes to stop Loki and his alien army from conquering Earth.",
         "Joss Whedon",
         "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-        "avengers.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "Avengers: Age of Ultron",
@@ -1108,7 +1108,7 @@ def reset_database():
         "Tony Stark and Bruce Banner create an artificial intelligence called Ultron to protect humanity, but the sentient being turns against its creators, forcing the Avengers to stop a global extinction event.",
         "Joss Whedon",
         "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-        "age_of_ultron.jpg"
+        "https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_FMjpg_UX864_.jpg"
     ),
     (
         "Avengers: Infinity War",
@@ -1118,7 +1118,7 @@ def reset_database():
         "The Avengers and their allies unite to stop Thanos from collecting the Infinity Stones and carrying out his catastrophic plan to reshape the universe.",
         "Anthony Russo, Joe Russo",
         "Robert Downey Jr., Chris Evans, Josh Brolin",
-        "infinity_war.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "Avengers: Endgame",
@@ -1128,7 +1128,7 @@ def reset_database():
         "After Thanos annihilates half of all life, the remaining Avengers assemble one final time to reverse his actions and restore balance to the universe.",
         "Anthony Russo, Joe Russo",
         "Robert Downey Jr., Chris Evans, Mark Ruffalo",
-        "endgame.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "PK",
@@ -1138,7 +1138,7 @@ def reset_database():
         "An innocent alien stranded on Earth embarks on a quest to retrieve his lost communication device, questioning religious dogma and social norms along the way.",
         "Rajkumar Hirani",
         "Aamir Khan, Anushka Sharma",
-        "pk.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTYzOTE2NjkxN15BMl5BanBnXkFtZTgwMDgzMTg0MzE@._V1_FMjpg_UX1090_.jpg"
     ),
     (
         "RRR",
@@ -1148,7 +1148,7 @@ def reset_database():
         "Two legendary revolutionaries with opposing paths form an unbreakable bond and rise together to fight against British colonial rule in India.",
         "S. S. Rajamouli",
         "N. T. Rama Rao Jr., Ram Charan",
-        "rrr.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNWMwODYyMjQtMTczMi00NTQ1LWFkYjItMGJhMWRkY2E3NDAyXkEyXkFqcGc@._V1_FMjpg_UX750_.jpg"
     ),
     (
         "K.G.F: Chapter 1",
@@ -1158,7 +1158,7 @@ def reset_database():
         "Rocky, a young man, seeks power and wealth in order to fulfil a promise to his dying mother. His quest takes him to Mumbai, where he becomes entangled with the notorious gold mafia.",
         "Prashanth Neel",
         "Yash, Srinidhi Shetty",
-        "kgf_chapter1.jpg"
+        "https://m.media-amazon.com/images/M/MV5BM2M0YmIxNzItOWI4My00MmQzLWE0NGYtZTM3NjllNjIwZjc5XkEyXkFqcGc@._V1_FMjpg_UX500_.jpg"
     ),
     (
         "K.G.F: Chapter 2",
@@ -1168,7 +1168,7 @@ def reset_database():
         "Rocky rises as the leader and saviour of the Kolar Gold Fields, facing new enemies like Adheera, Inayat Khalil, and Ramika Sen while trying to fulfil his mother’s last wishes.",
         "Prashanth Neel",
         "Yash, Sanjay Dutt, Raveena Tandon",
-        "kgf_chapter2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BZmQzZjVkZTUtYjI4ZC00ZDJmLWI0ZDUtZTFmMGM1Mzc5ZjIyXkEyXkFqcGc@._V1_FMjpg_UY2408_.jpg"
     ),
     (
         "Baahubali: The Beginning",
@@ -1178,7 +1178,7 @@ def reset_database():
         "In the kingdom of Mahishmati, Shivudu falls in love with a warrior woman and uncovers the conflict-ridden past of his family and his true legacy.",
         "S.S. Rajamouli",
         "Prabhas, Tamannaah, Rana Daggubati",
-        "baahubali_beginning.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNmNlYWMyYWUtMmVlNy00MzFkLTgxYTQtYzQ5ZTU1ZGYyNjYyXkEyXkFqcGc@._V1_FMjpg_UX620_.jpg"
     ),
     (
         "Baahubali 2: The Conclusion",
@@ -1188,7 +1188,7 @@ def reset_database():
         "After discovering that his father was killed by Bhallaladeva, Mahendra Baahubali raises an army to defeat him and free his mother from captivity.",
         "S.S. Rajamouli",
         "Prabhas, Anushka Shetty, Rana Daggubati",
-        "baahubali_conclusion.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNTRhYTlhZTgtYmMyYy00NWI4LTk4MzItOWM2YjBmYTg2OTI2XkEyXkFqcGc@._V1_FMjpg_UX1129_.jpg"
     ),
     (
         "Baahubali: The Epic",
@@ -1198,7 +1198,7 @@ def reset_database():
         "Mahendra returns to the ancient kingdom of Mahishmati to avenge his father's death and reclaim his rightful place.",
         "S.S. Rajamouli",
         "Prabhas, Anushka Shetty, Rana Daggubati",
-        "baahubali_epic.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNmIwYTI3ODItMzRkOS00MzlhLWI4NzQtNDFmOGJhZGJhM2VkXkEyXkFqcGc@._V1_FMjpg_UX1080_.jpg"
     ),
     (
         "Golmaal Again",
@@ -1208,7 +1208,7 @@ def reset_database():
         "Five orphan men return to the orphanage they grew up in to attend their mentor's funeral. They encounter the ghost of their childhood friend, Khushi, and help her attain salvation.",
         "Rohit Shetty",
         "Ajay Devgn, Parineeti Chopra, Tabu",
-        "golmaal_again.jpg"
+        "https://m.media-amazon.com/images/M/MV5BZDljYzk0MzgtY2ZlMi00MjQ1LTk0MzYtZGFiZjdiM2VkMWU3XkEyXkFqcGc@._V1_FMjpg_UY2250_.jpg"
     ),
     (
         "Johnny English",
@@ -1218,7 +1218,7 @@ def reset_database():
         "After all MI5 agents are killed, the intellectually challenged yet confident spy Johnny English takes charge of all operations.",
         "Peter Howitt",
         "Rowan Atkinson, Natalie Imbruglia",
-        "johnny_english.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTU0MGM4ZjQtNmQ3MC00NDE4LWEwYTItYWZiYzAxMGQwMDkzXkEyXkFqcGc@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "Johnny English Reborn",
@@ -1228,7 +1228,7 @@ def reset_database():
         "Eight years after a failed mission, Johnny English returns to MI-7 to stop international assassins from killing the Chinese premier.",
         "Oliver Parker",
         "Rowan Atkinson, Rosamund Pike",
-        "johnny_english_reborn.jpg"
+        "https://m.media-amazon.com/images/M/MV5BYjNhMTRlYWMtNGQzZS00OGFmLTlhOGUtODZlMDY4YzNlZDYwXkEyXkFqcGc@._V1_FMjpg_UX1013_.jpg"
     ),
     (
         "Johnny English Strikes Again",
@@ -1238,7 +1238,7 @@ def reset_database():
         "When a hacker exposes undercover agents in Britain, Johnny English is hired to find the culprit.",
         "David Kerr",
         "Rowan Atkinson, Ben Miller",
-        "johnny_english_strikes_again.jpg"
+        "https://m.media-amazon.com/images/M/MV5BOTkzNTEzOTk5MV5BMl5BanBnXkFtZTgwNDk1OTYzNjM@._V1_FMjpg_UX510_.jpg"
     ),
     (
         "Inception",
@@ -1248,7 +1248,7 @@ def reset_database():
         "Cobb steals information from targets by entering their dreams. Wanted for his wife's murder, his only chance at redemption is performing an impossible task.",
         "Christopher Nolan",
         "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-        "inception.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX700_.jpg"
     ),
     (
         "The Matrix",
@@ -1258,7 +1258,7 @@ def reset_database():
         "Neo, a hacker, discovers the reality he lives in is a simulated world, and joins Morpheus to learn the truth.",
         "Lana Wachowski, Lilly Wachowski",
         "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-        "the_matrix.jpg"
+        "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_FMjpg_UY3156_.jpg"
     ),
     (
         "Matrix Reloaded",
@@ -1268,7 +1268,7 @@ def reset_database():
         "Neo attempts to rescue the Keymaker from the Merovingian. He must confront the Architect to save Zion, while Zion prepares for war against the machines.",
         "Lana Wachowski, Lilly Wachowski",
         "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-        "matrix_reloaded.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNjAxYjkxNjktYTU0YS00NjFhLWIyMDEtMzEzMTJjMzRkMzQ1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "Matrix Revolutions",
@@ -1278,7 +1278,7 @@ def reset_database():
         "Neo attempts to broker peace between humans and machines to save Zion, confronting his arch-nemesis, the rogue agent Smith.",
         "Lana Wachowski, Lilly Wachowski",
         "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-        "matrix_revolutions.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMmNmMTEzODQtNmExMS00OGUxLWFkNTItMTM3NzBlNDk0YWU5XkEyXkFqcGc@._V1_FMjpg_UY3251_.jpg"
     ),
     (
         "The Matrix Resurrections",
@@ -1288,7 +1288,7 @@ def reset_database():
         "Thomas Anderson accepts Morpheus's offer and discovers a new, more secure, and dangerous Matrix.",
         "Lana Wachowski",
         "Keanu Reeves, Carrie-Anne Moss, Yahya Abdul-Mateen II",
-        "matrix_resurrections.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMDMyNDIzYzMtZTMyMy00NjUyLWI3Y2MtYzYzOGE1NzQ1MTBiXkEyXkFqcGc@._V1_FMjpg_UY4096_.jpg"
     ),
     (
         "Pirates of the Caribbean: The Curse of the Black Pearl",
@@ -1298,7 +1298,7 @@ def reset_database():
         "Will joins Captain Jack Sparrow to rescue Elizabeth, kidnapped due to her supposed possession of Jack's medallion.",
         "Gore Verbinski",
         "Johnny Depp, Orlando Bloom, Keira Knightley",
-        "pirates_curse_black_pearl.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNDhlMzEyNzItMTA5Mi00YWRhLThlNTktYTQyMTA0MDIyNDEyXkEyXkFqcGc@._V1_FMjpg_UX671_.jpg"
     ),
     (
         "Pirates of the Caribbean: Dead Man's Chest",
@@ -1308,7 +1308,7 @@ def reset_database():
         "Jack Sparrow seeks the heart of Davy Jones to avoid enslavement. Will and Elizabeth also have their own motives.",
         "Gore Verbinski",
         "Johnny Depp, Orlando Bloom, Keira Knightley",
-        "pirates_dead_mans_chest.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTcwODc1MTMxM15BMl5BanBnXkFtZTYwMDg1NzY3._V1_FMjpg_UX450_.jpg"
     ),
     (
         "Pirates of the Caribbean: At World's End",
@@ -1318,7 +1318,7 @@ def reset_database():
         "Will Turner and Elizabeth Swann team up with Barbossa to rescue Jack Sparrow and confront the Flying Dutchman.",
         "Gore Verbinski",
         "Johnny Depp, Orlando Bloom, Keira Knightley",
-        "pirates_at_worlds_end.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjIyNjkxNzEyMl5BMl5BanBnXkFtZTYwMjc3MDE3._V1_FMjpg_UX450_.jpg"
     ),
     (
         "Pirates of the Caribbean: On Stranger Tides",
@@ -1328,7 +1328,7 @@ def reset_database():
         "Jack Sparrow searches for the Fountain of Youth, encountering a mysterious woman and facing his old enemy Blackbeard.",
         "Rob Marshall",
         "Johnny Depp, Penélope Cruz, Ian McShane",
-        "pirates_on_stranger_tides.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjE5MjkwODI3Nl5BMl5BanBnXkFtZTcwNjcwMDk4NA@@._V1_FMjpg_UX1114_.jpg"
     ),
     (
         "Pirates of the Caribbean: Dead Men Tell No Tales",
@@ -1338,7 +1338,7 @@ def reset_database():
         "Jack Sparrow and Henry Turner search for the Trident of Poseidon to break the Flying Dutchman's curse and stop Captain Salazar.",
         "Joachim Rønning, Espen Sandberg",
         "Johnny Depp, Brenton Thwaites, Kaya Scodelario",
-        "pirates_dead_men_tell_no_tales.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTYyMTcxNzc5M15BMl5BanBnXkFtZTgwOTg2ODE2MTI@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "Star Wars: Episode IV - A New Hope",
@@ -1348,7 +1348,7 @@ def reset_database():
         "Princess Leia is abducted by Darth Vader. Luke teams up with a Jedi, a pilot, and two droids to save her and the galaxy.",
         "George Lucas",
         "Mark Hamill, Carrie Fisher, Harrison Ford",
-        "star_wars_iv.jpg"
+        "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_FMjpg_UY2937_.jpg"
     ),
     (
         "Star Wars: Episode V - The Empire Strikes Back",
@@ -1358,7 +1358,7 @@ def reset_database():
         "The Rebel Alliance fights the Galactic Empire while Luke Skywalker attempts to master the Force and become a Jedi.",
         "Irvin Kershner",
         "Mark Hamill, Carrie Fisher, Harrison Ford",
-        "star_wars_v.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_FMjpg_UY2883_.jpg"
     ),
     (
         "Star Wars: Episode VI - Return of the Jedi",
@@ -1368,7 +1368,7 @@ def reset_database():
         "Luke Skywalker tries to bring his father to the light side while the rebels hatch a plan to destroy the second Death Star.",
         "Richard Marquand",
         "Mark Hamill, Carrie Fisher, Harrison Ford",
-        "star_wars_vi.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_FMjpg_UY2809_.jpg"
     ),
     (
         "Star Wars: Episode I - The Phantom Menace",
@@ -1378,7 +1378,7 @@ def reset_database():
         "Jedi Qui-Gon and Obi-Wan protect a princess and discover a boy strong in the Force.",
         "George Lucas",
         "Liam Neeson, Ewan McGregor, Natalie Portman",
-        "star_wars_i.jpg"
+        "https://m.media-amazon.com/images/M/MV5BODVhNGIxOGItYWNlMi00YTA0LWI3NTctZmQxZGUwZDEyZWI4XkEyXkFqcGc@._V1_FMjpg_UX1230_.jpg"
     ),
     (
         "Star Wars: Episode II - Attack of the Clones",
@@ -1388,7 +1388,7 @@ def reset_database():
         "Obi-Wan uncovers a plot to destroy the Republic, and the Jedi must defend the galaxy against the Sith.",
         "George Lucas",
         "Ewan McGregor, Natalie Portman, Hayden Christensen",
-        "star_wars_ii.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNTgxMjY2YzUtZmVmNC00YjAwLWJlODMtNDBhNzllNzIzMjgxXkEyXkFqcGc@._V1_FMjpg_UY3091_.jpg"
     ),
     (
         "Star Wars: Episode III - Revenge of the Sith",
@@ -1398,7 +1398,7 @@ def reset_database():
         "Anakin falls prey to Palpatine and the Jedi's mind games, giving into temptation.",
         "George Lucas",
         "Ewan McGregor, Natalie Portman, Hayden Christensen",
-        "star_wars_iii.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_FMjpg_UX1152_.jpg"
     ),
     (
         "Star Wars: The Force Awakens",
@@ -1408,7 +1408,7 @@ def reset_database():
         "Finn, Rey, and Poe must stop a new order from destroying the New Republic and find the last surviving Jedi, Luke.",
         "J.J. Abrams",
         "Daisy Ridley, John Boyega, Harrison Ford",
-        "star_wars_force_awakens.jpg"
+        "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_FMjpg_UY3240_.jpg"
     ),
     (
         "Star Wars: The Last Jedi",
@@ -1418,7 +1418,7 @@ def reset_database():
         "Luke trains Rey to assist the Resistance against the First Order while she develops her powers.",
         "Rian Johnson",
         "Daisy Ridley, John Boyega, Mark Hamill",
-        "star_wars_last_jedi.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "Star Wars: The Rise of Skywalker",
@@ -1428,7 +1428,7 @@ def reset_database():
         "Emperor Palpatine is resurrected, and the Jedi face off against the Sith in the final battle of the saga.",
         "J.J. Abrams",
         "Daisy Ridley, John Boyega, Adam Driver",
-        "star_wars_rise_skywalker.jpg"
+        "https://m.media-amazon.com/images/M/MV5BODg5ZTNmMTUtYThlNy00NjljLWE0MGUtYmQ1NDg4NWU5MjQ1XkEyXkFqcGc@._V1_FMjpg_UY2048_.jpg"
     ),
         (
         "One Piece Film: Red",
@@ -1438,7 +1438,7 @@ def reset_database():
         "Uta is a beloved singer, renowned for concealing her identity. For the first time ever, she reveals herself at a live concert.",
         "Gorō Taniguchi",
         "Kaori Nazuka, Kazuya Nakai, Shunya Shiraishi",
-        "one_piece_red.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNTdjY2YxYTQtNjIzYy00ZDczLThhNTUtNmY2ZWNkZjZiMTYzXkEyXkFqcGc@._V1_FMjpg_UY5603_.jpg"
     ),
     (
         "Chainsaw Man - The Movie: Reze Arc",
@@ -1448,7 +1448,7 @@ def reset_database():
         "Chainsaw Man faces his deadliest battle yet in a brutal war between devils, hunters, and secret enemies.",
         "Ryu Nakayama",
         "Kikunosuke Toya, Reina Ueda, Tomori Kusunoki",
-        "chainsaw_man_reze.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNDQzMjc2ZDQtMjY2NS00M2UxLTg2OTktNWVjZmY5YjA4MzVhXkEyXkFqcGc@._V1_FMjpg_UX1079_.jpg"
     ),
     (
         "Howl's Moving Castle",
@@ -1458,7 +1458,7 @@ def reset_database():
         "Jealous of Sophie's closeness to Howl, the Witch of Waste transforms her into an old lady. Sophie must break the spell with Howl's friends, Calcifer and Markl.",
         "Hayao Miyazaki",
         "Chieko Baishō, Takuya Kimura, Akihiro Miwa",
-        "howls_moving_castle.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNzlhNzlmZjktMTkyNC00ODBkLTlkZjctODAyMGRiYzQyMThmXkEyXkFqcGc@._V1_FMjpg_UX667_.jpg"
     ),
     (
         "The Lord of the Rings: The Fellowship of the Ring",
@@ -1468,7 +1468,7 @@ def reset_database():
         "A ring with mysterious powers lands with Frodo. Guided by Gandalf, he and his friends embark on a journey to the Elvish kingdom.",
         "Peter Jackson",
         "Elijah Wood, Ian McKellen, Orlando Bloom",
-        "lotr_fellowship.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_FMjpg_UY2936_.jpg"
     ),
     (
         "The Lord of the Rings: The Two Towers",
@@ -1478,7 +1478,7 @@ def reset_database():
         "Frodo and Sam arrive in Mordor with Gollum's help. Allies join to defend Isengard as Saruman launches his assault.",
         "Peter Jackson",
         "Elijah Wood, Ian McKellen, Viggo Mortensen",
-        "lotr_two_towers.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMGQxMDdiOWUtYjc1Ni00YzM1LWE2NjMtZTg3Y2JkMjEzMTJjXkEyXkFqcGc@._V1_FMjpg_UX964_.jpg"
     ),
     (
         "The Lord of the Rings: The Return of the King",
@@ -1488,7 +1488,7 @@ def reset_database():
         "The Fellowship prepares for the final battle. Frodo and Sam approach Mount Doom to destroy the One Ring, following Gollum unknowingly.",
         "Peter Jackson",
         "Elijah Wood, Ian McKellen, Viggo Mortensen",
-        "lotr_return_king.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "A Minecraft Movie",
@@ -1498,7 +1498,7 @@ def reset_database():
         "A mysterious portal pulls four misfits into the Overworld. To get back home, they'll master the terrain with the help of Steve.",
         "Aaron Horvath & Peter Rida Michail",
         "Jason Momoa, Jack Black, Emma Myers",
-        "minecraft_movie.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjA0MWY0NTktMjJlNi00ZjhkLWI2ZTMtZDc0MjgxMjRkNzdkXkEyXkFqcGc@._V1_FMjpg_UY712_.jpg"
     ),
         (
         "Rush Hour", "Action", "Comedy", "Crime", "Adventure",
@@ -1506,7 +1506,7 @@ def reset_database():
         "Two cops from different cultures, who cannot stand each other, team up to save the kidnapped 11-year-old daughter of a diplomat.",
         "Brett Ratner",
         "Jackie Chan, Chris Tucker", 
-        "rush_hour.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMGZiMzViNmEtNTNlZi00MzFmLTk5NTEtNDE2OTUzNmNlMTY4XkEyXkFqcGc@._V1_FMjpg_UX850_.jpg"
     ),
     (
         "Rush Hour 2", "Action", "Comedy", "Crime", "Adventure",
@@ -1514,7 +1514,7 @@ def reset_database():
         "While vacationing in Hong Kong, Lee is assigned to solve a case after a bomb kills two undercover agents.",
         "Brett Ratner",
         "Jackie Chan, Chris Tucker", 
-        "rush_hour_2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMGM0OTM4NGYtYzkzMC00OGZmLWEwZTItOTg4ZTdkYTIxOTc0XkEyXkFqcGc@._V1_FMjpg_UX1011_.jpg"
     ),
     (
         "Rush Hour 3", "Action", "Comedy", "Crime", "Adventure",
@@ -1522,7 +1522,7 @@ def reset_database():
         "Inspector Lee and Detective Carter arrive in Paris following a murder attempt on Ambassador Han and track down the Triads' secret leaders.",
         "Brett Ratner",
         "Jackie Chan, Chris Tucker", 
-        "rush_hour_3.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTA0Nzg5NjQ0MDBeQTJeQWpwZ15BbWU3MDE4Mzg5NDE@._V1_FMjpg_UX510_.jpg"
     ),
     (
         "Ip Man", "Action", "Biography", "Drama", "History",
@@ -1530,7 +1530,7 @@ def reset_database():
         "After the Japanese invasion, Ip Man refuses to train enemy soldiers despite his skills becoming known.",
         "Wilson Yip",
         "Donnie Yen", 
-        "ip_man.jpg"
+        "https://m.media-amazon.com/images/M/MV5BZmJjZDE0MmYtNzgwYy00NTg2LWE0NDYtNzA0YTA4MjA0NmYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
     ),
     (
         "Kung Fu Panda", "Animation", "Action", "Comedy", "Family",
@@ -1538,7 +1538,7 @@ def reset_database():
         "Po, a kung fu enthusiast, is selected as the Dragon Warrior and must team up with the Furious Five to defeat evil forces.",
         "Mark Osborne & John Stevenson",
         "Jack Black, Dustin Hoffman", 
-        "kung_fu_panda.jpg"
+        "https://m.media-amazon.com/images/M/MV5BZDU5MDNiMGItYjVmZi00NDUxLTg2OTktNGE0NzNlNzM4NzgyXkEyXkFqcGc@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "Kung Fu Panda 2", "Animation", "Action", "Comedy", "Family",
@@ -1546,7 +1546,7 @@ def reset_database():
         "Dragon Warrior Po uncovers the mystery of his past while stopping the evil peacock Shen from conquering China.",
         "Jennifer Yuh Nelson",
         "Jack Black, Angelina Jolie", 
-        "kung_fu_panda_2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BYmIxMGYzMTUtZDQzYy00ODc4LWE1YzQtZGMwYTc0YTYyYTE0XkEyXkFqcGc@._V1_FMjpg_UX482_.jpg"
     ),
     (
         "Kung Fu Panda 3", "Animation", "Action", "Comedy", "Family",
@@ -1554,7 +1554,7 @@ def reset_database():
         "Po must train a group of pandas to master kung fu to defeat the wicked supernatural warrior Kai.",
         "Jennifer Yuh Nelson & Alessandro Carloni",
         "Jack Black, Bryan Cranston", 
-        "kung_fu_panda_3.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTUyNzgxNjg2M15BMl5BanBnXkFtZTgwMTY1NDI1NjE@._V1_FMjpg_UX660_.jpg"
     ),
     (
         "Ice Age", "Animation", "Adventure", "Comedy", "Family",
@@ -1562,7 +1562,7 @@ def reset_database():
         "Manny, Sid, and Diego help return a human baby to his father during the onset of an ice age.",
         "Chris Wedge",
         "Ray Romano, John Leguizamo", 
-        "ice_age.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMDBlYzU2OGMtOGJjNi00ZGZjLWIwNjMtYzdiZjkwYWNjZDljXkEyXkFqcGc@._V1_FMjpg_UX691_.jpg"
     ),
     (
         "Ice Age: The Meltdown", "Animation", "Adventure", "Comedy", "Family",
@@ -1570,7 +1570,7 @@ def reset_database():
         "Manny, Sid, and Diego search for higher ground as water bursts from a glacier, caused by Scrat's acorn mishap.",
         "Carlos Saldanha",
         "Ray Romano, John Leguizamo", 
-        "ice_age_meltdown.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjAwODg3OTAxMl5BMl5BanBnXkFtZTcwMjg2NjYyMw@@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "Ice Age: Dawn of the Dinosaurs", "Animation", "Adventure", "Comedy", "Family",
@@ -1578,7 +1578,7 @@ def reset_database():
         "Manny and Ellie expect their first child while Sid steals dinosaur eggs, leading to a rescue mission.",
         "Carlos Saldanha",
         "Ray Romano, John Leguizamo", 
-        "ice_age_dinosaurs.jpg"
+        "https://m.media-amazon.com/images/M/MV5BZWJjZDYwMjgtZDZiMy00YzcyLThjN2YtYjI1ZDQ2ZDJkOTVmXkEyXkFqcGc@._V1_FMjpg_UY2110_.jpg"
     ),
     (
         "Ice Age: Continental Drift", "Animation", "Adventure", "Comedy", "Family",
@@ -1586,7 +1586,7 @@ def reset_database():
         "Scrat's nut-chasing antics cause a continental drift, dragging Manny, Diego, and Sid into another adventure.",
         "Steve Martino & Mike Thurmeier",
         "Ray Romano, John Leguizamo", 
-        "ice_age_continental_drift.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTM3NDM5MzY5Ml5BMl5BanBnXkFtZTcwNjExMDUwOA@@._V1_FMjpg_UY2000_.jpg"
     ),
     (
         "Madagascar", "Animation", "Comedy", "Adventure", "Family",
@@ -1594,7 +1594,7 @@ def reset_database():
         "Four animals from New York Central Zoo escape to Madagascar, where they meet happy lemurs.",
         "Eric Darnell & Tom McGrath",
         "Ben Stiller, Chris Rock", 
-        "madagascar.jpg"
+        "https://m.media-amazon.com/images/M/MV5BYjk4OGFmZmYtYWE4NC00MzM4LTkwZTItODdhMjk3NTZjMmI5XkEyXkFqcGc@._V1_FMjpg_UX960_.jpg"
     ),
     (
         "Madagascar: Escape 2 Africa", "Animation", "Comedy", "Adventure", "Family",
@@ -1602,7 +1602,7 @@ def reset_database():
         "Alex reunites with his long-lost parents in Africa while Makunga tries to become king of the jungle.",
         "Eric Darnell & Tom McGrath",
         "Ben Stiller, Chris Rock", 
-        "madagascar_2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjExMDA4NDcwMl5BMl5BanBnXkFtZTcwODAxNTQ3MQ@@._V1_FMjpg_UX550_.jpg"
     ),
     (
         "Madagascar 3: Europe's Most Wanted", "Animation", "Comedy", "Adventure", "Family",
@@ -1610,7 +1610,7 @@ def reset_database():
         "The zoo animals travel across Europe with a circus troupe while being chased by animal control.",
         "Eric Darnell & Tom McGrath",
         "Ben Stiller, Chris Rock", 
-        "madagascar_3.jpg"
+        "https://m.media-amazon.com/images/M/MV5BYTM5OWRiZTAtOTNkMS00NzNhLTkwYmYtMWI1MzkyMjE3MWE1XkEyXkFqcGc@._V1_FMjpg_UX800_.jpg"
     ),
     (
         "Guardians of the Galaxy", "Action", "Adventure", "Comedy", "Sci-Fi",
@@ -1618,7 +1618,7 @@ def reset_database():
         "A group of skilled criminals led by Peter Quill join forces to stop villain Ronan the Accuser, who wants a mystical orb to control the universe.",
         "James Gunn",
         "Chris Pratt, Zoe Saldana, Dave Bautista",
-        "guardians_galaxy_1.jpg"
+        "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_FMjpg_UX1012_.jpg"
     ),
     (
         "Guardians of the Galaxy Vol. 2", "Action", "Adventure", "Comedy", "Sci-Fi",
@@ -1626,7 +1626,7 @@ def reset_database():
         "After a successful mission, Peter Quill and his team meet Ego, who claims to be Peter's father, but uncover disturbing truths.",
         "James Gunn",
         "Chris Pratt, Zoe Saldana, Dave Bautista",
-        "guardians_galaxy_2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_FMjpg_UX509_.jpg"
     ),
     (
         "Guardians of the Galaxy Vol. 3", "Action", "Adventure", "Comedy", "Sci-Fi",
@@ -1634,7 +1634,7 @@ def reset_database():
         "Peter Quill and his team must rally to defend the universe and protect one of their own, or risk the end of the Guardians.",
         "James Gunn",
         "Chris Pratt, Zoe Saldana, Dave Bautista",
-        "guardians_galaxy_3.jpg"
+        "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_FMjpg_UX886_.jpg"
     ),
     (
         "Doctor Strange", "Action", "Adventure", "Fantasy", "Sci-Fi",
@@ -1642,7 +1642,7 @@ def reset_database():
         "After losing the use of his hands, Stephen Strange trains under the Ancient One and becomes a master sorcerer.",
         "Scott Derrickson",
         "Benedict Cumberbatch, Chiwetel Ejiofor",
-        "doctor_strange_1.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_FMjpg_UY2048_.jpg"
     ),
     (
         "Doctor Strange in the Multiverse of Madness", "Action", "Adventure", "Fantasy", "Sci-Fi",
@@ -1650,7 +1650,7 @@ def reset_database():
         "Doctor Strange teams with a mysterious teenage girl to battle multiverse threats, including alternate versions of himself.",
         "Sam Raimi",
         "Benedict Cumberbatch, Elizabeth Olsen",
-        "doctor_strange_2.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMGMwYmVlYTEtYmZhMC00ZDQ3LTgwNWMtZjBkNjEzZDkxOWFlXkEyXkFqcGc@._V1_FMjpg_UX756_.jpg"
     ),
     (
         "Jurassic Park", "Adventure", "Sci-Fi", "Action", "Adventure", 
@@ -1658,7 +1658,7 @@ def reset_database():
         "An industrialist invites some experts to visit his theme park of cloned dinosaurs. After a power failure, the creatures run loose, putting everyone's lives, including his grandchildren's, in danger.", 
         "Steven Spielberg", 
         "Sam Neill, Laura Dern, Jeff Goldblum", 
-        "jurassic_park.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_FMjpg_UX667_.jpg"
     ),
     (
         "Whiplash", "Drama", "Music", "Psychological", "Drama", 
@@ -1666,7 +1666,7 @@ def reset_database():
         "Andrew enrols in a music conservatory to become a drummer. But he is mentored by Terence Fletcher, whose unconventional training methods push him beyond the boundaries of reason and sensibility.", 
         "Damien Chazelle", 
         "Miles Teller, J.K. Simmons", 
-        "whiplash.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMDFjOWFkYzktYzhhMC00NmYyLTkwY2EtYjViMDhmNzg0OGFkXkEyXkFqcGc@._V1_FMjpg_UY5333_.jpg"
     ),
     (
         "KPop Demon Hunters", "Action", "Fantasy", "Music", "Adventure", 
@@ -1674,7 +1674,7 @@ def reset_database():
         "When K-pop superstars Rumi, Mira and Zoey aren't selling out stadiums or topping the Billboard charts, they're moonlighting as demon hunters to protect their fans from ever-present supernatural danger.", 
         "Saja Boys", 
         "Rumi, Mira, Zoey", 
-        "kpop_demon_hunters.jpg"
+        "https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1013_.jpg"
     ),
     (
         "Interstellar", "Sci-Fi", "Adventure", "Drama", "Sci-Fi", 
@@ -1682,7 +1682,7 @@ def reset_database():
         "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.", 
         "Christopher Nolan", 
         "Matthew McConaughey, Anne Hathaway, Jessica Chastain", 
-        "interstellar.jpg"
+        "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UY3600_.jpg"
     ),
     (
         "The Dark Knight", "Action", "Crime", "Drama", "Thriller", 
@@ -1690,7 +1690,7 @@ def reset_database():
         "Batman has a new foe, the Joker, who is an accomplished criminal hell-bent on decimating Gotham City. Together with Gordon and Harvey Dent, Batman struggles to thwart the Joker before it is too late.", 
         "Christopher Nolan", 
         "Christian Bale, Heath Ledger, Aaron Eckhart", 
-        "dark_knight.jpg"
+        "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg"
     )
     ]
 
