@@ -2,13 +2,18 @@ import sqlite3
 import bcrypt
 import datetime
 import re
-
+import difflib
 
 conn = sqlite3.connect("PWAFramesDatabase.db")
 cursor = conn.cursor()
 
 current_user = None
 current_user_level = None
+
+VALID_GENRES = {"action", "adventure", "fantasy", "romance", "comedy", "drama", "supernatural", "sci-fi", "superhero", "historical", "epic", "satire", "crime", "thriller", "horror", "spy", "music", "family", "biography", "animation", "psychological"}
+VALID_CLASSIFICATIONS = {"G", "PG", "M", "MA 15+", "R 18"}
+VALID_RATING_ORDERS = {"asc", "desc"}
+VALID_YEAR_ORDERS = {"new_to_old", "old_to_new"}
 
 #GET RID OF THIS WHEN YOU CONNECT THE API
 badWords = ["Sountharikan", "Sounth"]
@@ -632,6 +637,8 @@ def menu_not_logged_in():
     print("2. Login")
     print("3. Exit")
     print("4. List all movies")
+    print("5. Search movies")
+    print("6. Browse movies")
     return input("Choose an option: ")
 
 def menu_user():
@@ -646,6 +653,8 @@ def menu_user():
     print("8. View My Statistics")
     print("9. View Statistics by username/email")
     print("0. List all movies")
+    print("B. Browse movies")
+    print("S. Search movies")
     return input("Choose an option: ")
 
 def menu_restricted():
@@ -657,6 +666,8 @@ def menu_restricted():
     print("5. View My Statistics")
     print("6. View Statistics by username/email")
     print("7. List all movies")
+    print("8. Browse movies")
+    print("9. Search movies")
     return input("Choose an option: ")
 
 def menu_moderator():
@@ -674,6 +685,8 @@ def menu_moderator():
     print("Q. View My Statistics")
     print("E. View Statistics by username/email")
     print("X. List all movies")
+    print("B. Browse movies")
+    print("S. Search movies")
     return input("Choose an option: ")
 
 def menu_admin():
@@ -690,140 +703,285 @@ def menu_admin():
     print("Q. View My Statistics")
     print("E. View Statistics by username/email")
     print("X. List all movies")
+    print("B. Browse movies")
+    print("S. Search movies")
     return input("Choose an option: ")
 
 
+def genre_weight_clause():
+    return """
+        CASE
+            WHEN FilmGenreP = ? THEN 1
+            WHEN FilmGenreS = ? THEN 2
+            WHEN FilmGenreT = ? THEN 3
+            WHEN FilmGenreQ = ? THEN 4
+            ELSE 5
+        END
+    """
+
+
+def build_filter_conditions(filters):
+    conditions = []
+    params = []
+
+    if filters.get("classification"):
+        conditions.append("FilmClassification = ?")
+        params.append(filters["classification"])
+
+    return conditions, params
+
+
+def build_order_by_clause(filters):
+    order_parts = []
+    params = []
+
+    if filters.get("genre"):
+        order_parts.append(genre_weight_clause())
+        params.extend([filters["genre"]] * 4)
+
+    # Default or secondary ordering by rating
+    order_parts.append("FilmRating DESC")
+
+    # Year sorting (optional)
+    if filters.get("year_sort") == "new_to_old":
+        order_parts.append("FilmReleaseDate DESC")
+    elif filters.get("year_sort") == "old_to_new":
+        order_parts.append("FilmReleaseDate ASC")
+
+    return " ORDER BY " + ", ".join(order_parts), params
+
+
+def browse_movies(filters=None):
+    if filters is None:
+        filters = {}
+
+    query = """
+        SELECT
+            FilmID,
+            FilmName,
+            FilmGenreP,
+            FilmGenreS,
+            FilmGenreT,
+            FilmGenreQ,
+            FilmRating,
+            FilmReleaseDate,
+            FilmClassification
+        FROM MovieList
+    """
+
+    conditions, where_params = build_filter_conditions(filters)
+
+    if conditions:
+        query += " WHERE " + " AND ".join(conditions)
+
+    order_clause, order_params = build_order_by_clause(filters)
+    query += order_clause
+
+    cursor.execute(query, where_params + order_params)
+    movies = cursor.fetchall()
+
+    if not movies:
+        print("No movies found.")
+        return
+
+    print("\n=== Browse Movies ===")
+    for m in movies:
+        print(
+            f"[{m[0]}] {m[1]} | Rating: {m[6]} | "
+            f"Genres: {m[2]}, {m[3]}, {m[4]}, {m[5]} | "
+            f"Year: {m[7]} | Class: {m[8]}"
+        )
+
+
+def search_movies(
+    genre_filters=None, #options are action, adventure, fantasy, romance, comedy, drama, supernatural, sci-fi, superhero, historical, epic, satire, crime, thriller, horror, spy, music, family, biography, animation, psychological
+    classification_filters=None, #options are G, PG, M, MA 15+, 
+    rating_order="desc", #options are asc, desc
+    year_order=None #options are new_to_old, old_to_new
+):
+    query = input("Search for a movie: ").strip()
+    if not query:
+        print("Search cannot be empty.")
+        return
+    
+    cursor.execute(
+        """
+        SELECT *
+        FROM MovieList
+        WHERE FilmName LIKE ?
+        """,
+        (f"%{query}%",)
+    )
+    results = cursor.fetchall()
+
+    if not results:
+        cursor.execute("SELECT FilmName FROM MovieList")
+        all_names = [row[0] for row in cursor.fetchall()]
+
+        matches = difflib.get_close_matches(query, all_names, n=5, cutoff=0.6)
+        if not matches:
+            print("No matching or similar movies found.")
+            return
+
+        placeholders = ",".join("?" for _ in matches)
+        cursor.execute(
+            f"""
+            SELECT *
+            FROM MovieList
+            WHERE FilmName IN ({placeholders})
+            """,
+            matches
+        )
+        results = cursor.fetchall()
+
+    filtered = []
+    for movie in results:
+        (
+            film_id,
+            film_name,
+            genre_p,
+            genre_s,
+            genre_t,
+            genre_q,
+            film_rating,
+            review_count,
+            release_date,
+            classification,
+            description,
+            directors,
+            actors,
+            image_link
+        ) = movie
+
+        if genre_filters:
+            genres = {genre_p, genre_s, genre_t, genre_q}
+            if not genres.intersection(genre_filters):
+                continue
+
+        if classification_filters:
+            if classification not in classification_filters:
+                continue
+        filtered.append(movie)
+    if not filtered:
+        print("No movies match your filters.")
+        return
+
+    if rating_order == "desc":
+        filtered.sort(key=lambda m: m[6] or 0, reverse=True)
+    elif rating_order == "asc":
+        filtered.sort(key=lambda m: m[6] or 0)
+
+    if year_order == "new_to_old":
+        filtered.sort(key=lambda m: m[8], reverse=True)
+    elif year_order == "old_to_new":
+        filtered.sort(key=lambda m: m[8])
+
+    print("\nMovies found:")
+    for movie in filtered:
+        print(f"[{movie[0]}] {movie[1]} ({movie[8]} | {movie[9]})")
 
 
 
-if __name__ == "__main__":
+def browse_movies_terminal():
+    print("\n=== Browse Movies ===")
+    print("You can leave any filter empty by pressing Enter.\n")
+
     while True:
-        if current_user is None:
-            choice = menu_not_logged_in()
+        genre = input("Enter genre to prioritize: ").strip()
+        if not genre:
+            genre = None
+            break
+        if genre.lower() in VALID_GENRES:
+            genre = genre.lower()
+            break
+        print(f"Invalid genre. Valid options: {', '.join(VALID_GENRES)}")
 
-            if choice == "1":
-                registerUser()
-            elif choice == "2":
-                loginUser()
-            elif choice == "3":
-                break
-            elif choice == "4":
-                list_all_movies()
-            else:
-                print("Invalid option.")
+    while True:
+        classification = input("Enter classification (G, PG, M, MA 15+, R 18): ").strip()
+        if not classification:
+            classification = None
+            break
+        if classification.upper() in VALID_CLASSIFICATIONS:
+            classification = classification.upper()
+            break
+        print(f"Invalid classification. Valid options: {', '.join(VALID_CLASSIFICATIONS)}")
 
-        else:
-            if current_user_level == 0:
-                choice = menu_restricted()
+    while True:
+        year_sort = input("Enter year sort order ('new_to_old' or 'old_to_new'): ").strip()
+        if not year_sort:
+            year_sort = None
+            break
+        if year_sort in VALID_YEAR_ORDERS:
+            break
+        print(f"Invalid option. Valid options: {', '.join(VALID_YEAR_ORDERS)}")
 
-                if choice == "1":
-                    logoutUser()
-                elif choice == "2":
-                    deleteUser() 
-                elif choice == "3":
-                    break
-                elif choice == "4":
-                    edit_profile(cursor, conn, current_user)
-                elif choice == "5":
-                    view_statistics(cursor, user_id=current_user["id"])
-                elif choice == "6":
-                    username_or_email = input("Enter username or email to view statistics: ")
-                    view_statistics(cursor, username_or_email=username_or_email)
-                elif choice == "7":
-                    list_all_movies()
-                else:
-                    print("Invalid option.")
+    filters = {}
+    if genre:
+        filters["genre"] = genre
+    if classification:
+        filters["classification"] = classification
+    if year_sort:
+        filters["year_sort"] = year_sort
 
-            elif current_user_level == 1:
-                choice = menu_user()
+    browse_movies(filters)
 
-                if choice == "1":
-                    logoutUser()
-                elif choice == "2":
-                    add_comment(current_user["id"])
-                elif choice == "3":
-                    edit_profile(cursor, conn, current_user)
-                elif choice == "4":
-                    deleteUser()    
-                elif choice == "5":
-                    flag_comment()
-                elif choice == "6":
-                    break
-                elif choice == "7":
-                    report_user()
-                elif choice == "8":
-                    view_statistics(cursor, user_id=current_user["id"])
-                elif choice == "9":
-                    username_or_email = input("Enter username or email to view statistics: ")
-                    view_statistics(cursor, username_or_email=username_or_email)
-                elif choice == "0":
-                    list_all_movies()
-                else:
-                    print("Not implemented yet or invalid option.")
 
-            elif current_user_level == 2:
-                choice = menu_moderator()
+def search_movies_terminal():
+    print("\n=== Search Movies ===")
+    print("You can leave any filter empty by pressing Enter.\n")
+    query = input("Enter movie title to search: ").strip()
+    if not query:
+        print("Search cannot be empty.")
+        return
 
-                if choice == "1":
-                    logoutUser()
-                elif choice == "2":
-                    add_comment(current_user["id"])
-                elif choice == "3":
-                    view_flagged_comments(cursor)
-                elif choice == "4":
-                    deleteUser()
-                elif choice == "5":
-                    delete_comment()
-                elif choice == "6":
-                    demote_user()
-                elif choice == "7":
-                    promote_user()
-                elif choice == "8":
-                    break
-                elif choice == "9":
-                    edit_profile(cursor, conn, current_user)
-                elif choice == "0":
-                    view_reported_users(cursor)
-                elif choice.upper() == "Q":
-                    view_statistics(cursor, user_id=current_user["id"])
-                elif choice.upper() == "E":
-                    username_or_email = input("Enter username or email to view statistics: ")
-                    view_statistics(cursor, username_or_email=username_or_email)
-                elif choice.upper() == "X":
-                    list_all_movies()
-                else:
-                    print("Not implemented yet or invalid option.")
+    while True:
+        genre_input = input("Enter genres to filter by (comma-separated): ").strip()
+        if not genre_input:
+            genre_filters = None
+            break
+        genres = {g.strip().lower() for g in genre_input.split(",")}
+        invalid = genres - VALID_GENRES
+        if invalid:
+            print(f"Invalid genres: {', '.join(invalid)}. Valid options: {', '.join(VALID_GENRES)}")
+            continue
+        genre_filters = genres
+        break
 
-            elif current_user_level == 3:
-                choice = menu_admin()
+    while True:
+        classification_input = input("Enter classifications to filter by (comma-separated): ").strip()
+        if not classification_input:
+            classification_filters = None
+            break
+        classifications = {c.strip().upper() for c in classification_input.split(",")}
+        invalid = classifications - VALID_CLASSIFICATIONS
+        if invalid:
+            print(f"Invalid classifications: {', '.join(invalid)}. Valid options: {', '.join(VALID_CLASSIFICATIONS)}")
+            continue
+        classification_filters = classifications
+        break
 
-                if choice == "1":
-                    logoutUser()
-                elif choice == "2":
-                    delete_comment()
-                elif choice == "3":
-                    demote_user()
-                elif choice == "4":
-                    promote_user()
-                elif choice == "5":
-                    dump_accounts()
-                elif choice == "6":
-                    break
-                elif choice == "7":
-                    edit_profile(cursor, conn, current_user)
-                elif choice == "8":
-                    view_flagged_comments(cursor)
-                elif choice == "9":
-                    view_reported_users(cursor)
-                elif choice.upper() == "Q":
-                    view_statistics(cursor, user_id=current_user["id"])
-                elif choice.upper() == "E":
-                    username_or_email = input("Enter username or email to view statistics: ")
-                    view_statistics(cursor, username_or_email=username_or_email)
-                elif choice.upper() == "X":
-                    list_all_movies()
-                else:
-                    print("Not implemented yet or invalid option.")
+    while True:
+        rating_order = input("Sort by rating? 'asc' or 'desc' (default 'desc'): ").strip() or "desc"
+        if rating_order in VALID_RATING_ORDERS:
+            break
+        print(f"Invalid option. Valid options: {', '.join(VALID_RATING_ORDERS)}")
+
+    while True:
+        year_order = input("Sort by year? 'new_to_old' or 'old_to_new' (leave empty for no sorting): ").strip()
+        if not year_order:
+            year_order = None
+            break
+        if year_order in VALID_YEAR_ORDERS:
+            break
+        print(f"Invalid option. Valid options: {', '.join(VALID_YEAR_ORDERS)}")
+
+    search_movies(
+        genre_filters=genre_filters,
+        classification_filters=classification_filters,
+        rating_order=rating_order,
+        year_order=year_order
+    )
+
 
 def reset_database():
     # Drop old tables
@@ -859,8 +1017,8 @@ def reset_database():
         FilmGenreS TEXT,
         FilmGenreT TEXT,
         FilmGenreQ TEXT,
-        FilmReviewCount INTEGER DEFAULT 0,
         FilmRating REAL,
+        FilmReviewCount INTEGER DEFAULT 0,
         FilmReleaseDate TEXT,
         FilmClassification TEXT,
         FilmDescription TEXT,
@@ -896,7 +1054,7 @@ def reset_database():
         "TheAdmin",
         "admin194(<|>/)*#Fh8@78hf9Q@*f9aos-wQhaP2any%",
         "admin.adminson@administrator.com",
-        datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "Long Before Time Had A Name",
         3,
         "System Overlord"
     ))
@@ -1037,7 +1195,7 @@ def reset_database():
         "Action", "Adventure", "Fantasy", "Drama",
         "2017",
         "MA 15+",
-        "Mahendra returns to the ancient kingdom of Mahishmati to avenge his father’s death and reclaim his rightful place.",
+        "Mahendra returns to the ancient kingdom of Mahishmati to avenge his father's death and reclaim his rightful place.",
         "S.S. Rajamouli",
         "Prabhas, Anushka Shetty, Rana Daggubati",
         "baahubali_epic.jpg"
@@ -1233,7 +1391,7 @@ def reset_database():
         "star_wars_ii.jpg"
     ),
     (
-        "Star Wars: Episode III – Revenge of the Sith",
+        "Star Wars: Episode III - Revenge of the Sith",
         "Sci-Fi", "Adventure", "Action", "Fantasy",
         "2005",
         "M",
@@ -1542,19 +1700,163 @@ def reset_database():
         FilmReleaseDate, FilmClassification, FilmDescription,
         FilmDirectors, FilmActors, FlimImageLink
     )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, movies)
 
 
     conn.commit()
 
 
+if __name__ == "__main__":
+    while True:
+        if current_user is None:
+            choice = menu_not_logged_in()
+
+            if choice == "1":
+                registerUser()
+            elif choice == "2":
+                loginUser()
+            elif choice == "3":
+                break
+            elif choice == "4":
+                list_all_movies()
+            elif choice == "5":
+                browse_movies_terminal()
+            elif choice == "6":
+                search_movies_terminal()
+            else:
+                print("Invalid option.")
+
+        else:
+            if current_user_level == 0:
+                choice = menu_restricted()
+
+                if choice == "1":
+                    logoutUser()
+                elif choice == "2":
+                    deleteUser() 
+                elif choice == "3":
+                    break
+                elif choice == "4":
+                    edit_profile(cursor, conn, current_user)
+                elif choice == "5":
+                    view_statistics(cursor, user_id=current_user["id"])
+                elif choice == "6":
+                    username_or_email = input("Enter username or email to view statistics: ")
+                    view_statistics(cursor, username_or_email=username_or_email)
+                elif choice == "7":
+                    list_all_movies()
+                elif choice == "8":
+                    browse_movies_terminal()
+                elif choice == "9":
+                    search_movies_terminal()
+                else:
+                    print("Invalid option.")
+
+            elif current_user_level == 1:
+                choice = menu_user()
+
+                if choice == "1":
+                    logoutUser()
+                elif choice == "2":
+                    add_comment(current_user["id"])
+                elif choice == "3":
+                    edit_profile(cursor, conn, current_user)
+                elif choice == "4":
+                    deleteUser()    
+                elif choice == "5":
+                    flag_comment()
+                elif choice == "6":
+                    break
+                elif choice == "7":
+                    report_user()
+                elif choice == "8":
+                    view_statistics(cursor, user_id=current_user["id"])
+                elif choice == "9":
+                    username_or_email = input("Enter username or email to view statistics: ")
+                    view_statistics(cursor, username_or_email=username_or_email)
+                elif choice == "0":
+                    list_all_movies()
+                elif choice.upper() == "B":
+                    browse_movies_terminal()
+                elif choice.upper() == "S":
+                    search_movies_terminal()
+                else:
+                    print("Not implemented yet or invalid option.")
+
+            elif current_user_level == 2:
+                choice = menu_moderator()
+
+                if choice == "1":
+                    logoutUser()
+                elif choice == "2":
+                    add_comment(current_user["id"])
+                elif choice == "3":
+                    view_flagged_comments(cursor)
+                elif choice == "4":
+                    deleteUser()
+                elif choice == "5":
+                    delete_comment()
+                elif choice == "6":
+                    demote_user()
+                elif choice == "7":
+                    promote_user()
+                elif choice == "8":
+                    break
+                elif choice == "9":
+                    edit_profile(cursor, conn, current_user)
+                elif choice == "0":
+                    view_reported_users(cursor)
+                elif choice.upper() == "Q":
+                    view_statistics(cursor, user_id=current_user["id"])
+                elif choice.upper() == "E":
+                    username_or_email = input("Enter username or email to view statistics: ")
+                    view_statistics(cursor, username_or_email=username_or_email)
+                elif choice.upper() == "X":
+                    list_all_movies()
+                elif choice.upper() == "B":
+                    browse_movies_terminal()
+                elif choice.upper() == "S":
+                    search_movies_terminal()
+                else:
+                    print("Not implemented yet or invalid option.")
+
+            elif current_user_level == 3:
+                choice = menu_admin()
+
+                if choice == "1":
+                    logoutUser()
+                elif choice == "2":
+                    delete_comment()
+                elif choice == "3":
+                    demote_user()
+                elif choice == "4":
+                    promote_user()
+                elif choice == "5":
+                    dump_accounts()
+                elif choice == "6":
+                    break
+                elif choice == "7":
+                    edit_profile(cursor, conn, current_user)
+                elif choice == "8":
+                    view_flagged_comments(cursor)
+                elif choice == "9":
+                    view_reported_users(cursor)
+                elif choice.upper() == "Q":
+                    view_statistics(cursor, user_id=current_user["id"])
+                elif choice.upper() == "E":
+                    username_or_email = input("Enter username or email to view statistics: ")
+                    view_statistics(cursor, username_or_email=username_or_email)
+                elif choice.upper() == "X":
+                    list_all_movies()
+                elif choice.upper() == "B":
+                    browse_movies_terminal()
+                elif choice.upper() == "S":
+                    search_movies_terminal()
+                else:
+                    print("Not implemented yet or invalid option.")
 
 
-
-
-conn.commit()
-print("Movies inserted successfully!")
 
 
 
