@@ -7,6 +7,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../static/styles.css">
+</head>
 
 <body class="min-h-screen text-white bg-black flex flex-col">
 
@@ -99,102 +100,81 @@
 
     <h1 class="text-3xl font-semibold mb-8">Recommended Movies</h1>
 
+    <form method="GET" action="/browse" class="mb-8 flex flex-col sm:flex-row gap-4">
+
+      <!-- SEARCH -->
+      <input
+        type="text"
+        name="q"
+        placeholder="Search movies..."
+        value="{{ request.args.get('q', '') }}"
+        class="w-full sm:w-1/2 px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+      >
+
+      <!-- GENRE -->
+      <select
+        name="genre"
+        class="w-full sm:w-1/4 px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 text-white"
+      >
+        <option value="">All genres</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Animation">Animation</option>
+      </select>
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        class="px-6 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500"
+      >
+        Filter
+      </button>
+
+    </form>
+
     <!-- GRID -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
 
-      <!-- MOVIE CARD -->
-      <div class="bg-black/60 border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-shadow backdrop-blur-sm">
+      {% for movie in movies %}
+      <div class="bg-black/60 border border-gray-800 rounded-xl overflow-hidden flex flex-col h-full">
+
         <div class="aspect-[2/3] bg-gray-900">
-          <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
-               class="w-full h-full object-cover">
+          <img
+            src="{{ movie[4] }}"
+            class="w-full h-full object-cover"
+            alt="{{ movie[1] }}">
+
         </div>
 
-        <div class="p-4">
-          <h3 class="text-lg font-semibold line-clamp-1">Inception</h3>
-          <p class="text-gray-400 text-sm mb-3">2010</p>
+        <div class="p-4 flex flex-col flex-1">
+
+          <h3 class="text-lg font-semibold">{{ movie[1] }}</h3>
+          <p class="text-gray-400 text-sm">{{ movie[2] }}</p>
 
           <div class="flex items-center gap-2 mb-4">
-            <span class="text-yellow-400">★★★★☆</span>
-            <span class="text-gray-400 text-sm">4.8</span>
+            <span class="text-yellow-400">★</span>
+            <span class="text-gray-400 text-sm">{{ movie[3] }}</span>
           </div>
 
-          <a href="/movie?id=inception"
-             class="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+          <a
+            href="/movie?id={{ movie[0] }}"
+            class="mt-auto block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500"
+          >
             View Details
           </a>
         </div>
+
       </div>
-
-      <!-- COPY THIS CARD TO ADD MORE MOVIES -->
-      <div class="bg-black/60 border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-shadow backdrop-blur-sm">
-        <div class="aspect-[2/3] bg-gray-900">
-          <img src="https://m.media-amazon.com/images/I/91JnoM0khKL._AC_UF1000,1000_QL80_.jpg"
-               class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-4">
-          <h3 class="text-lg font-semibold line-clamp-1">Interstellar</h3>
-          <p class="text-gray-400 text-sm mb-3">2014</p>
-
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-yellow-400">★★★★★</span>
-            <span class="text-gray-400 text-sm">5.0</span>
-          </div>
-
-          <a href="/movie?id=interstellar"
-             class="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
-            View Details
-          </a>
-        </div>
-      </div>
-
-      <!-- ANOTHER -->
-      <div class="bg-black/60 border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-shadow backdrop-blur-sm">
-        <div class="aspect-[2/3] bg-gray-900">
-          <img src="https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/d102db69-5dea-482a-a7d5-8ac38ec3e706/avatar3.jpg"
-               class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-4">
-          <h3 class="text-lg font-semibold line-clamp-1">Avatar</h3>
-          <p class="text-gray-400 text-sm mb-3">2009</p>
-
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-yellow-400">★★★☆☆</span>
-            <span class="text-gray-400 text-sm">3.0</span>
-          </div>
-
-          <a href="/movie?id=avatar"
-             class="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
-            View Details
-          </a>
-        </div>
-      </div>
-
-      <!-- FOURTH -->
-      <div class="bg-black/60 border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-shadow backdrop-blur-sm">
-        <div class="aspect-[2/3] bg-gray-900">
-          <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg"
-               class="w-full h-full object-cover">
-        </div>
-
-        <div class="p-4">
-          <h3 class="text-lg font-semibold line-clamp-1">The Dark Knight</h3>
-          <p class="text-gray-400 text-sm mb-3">2008</p>
-
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-yellow-400">★★★★★</span>
-            <span class="text-gray-400 text-sm">5.0</span>
-          </div>
-
-          <a href="/movie?id=darkknight"
-             class="block w-full text-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
-            View Details
-          </a>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
+
+
+
   </main>
 
   <footer class="max-w-6xl mx-auto px-4 pb-8 text-xs text-gray-500 text-center">
